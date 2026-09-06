@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Anna 🕷️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#030305;
+    color:white;
+}
+
+/* =========================
+   MAIN SCREEN
+========================= */
+
+.screen{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 1s ease;
+    overflow:hidden;
+}
+
+.screen.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.content{
+    width:90%;
+    max-width:1000px;
+    position:relative;
+    z-index:10;
+}
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particles{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+}
+
+.particle{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:#ff1744;
+    border-radius:50%;
+    box-shadow:0 0 12px #ff1744;
+    animation:particleFloat linear infinite;
+}
+
+@keyframes particleFloat{
+
+    from{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    80%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-20vh);
+        opacity:0;
+    }
+}
+
+/* =========================
+   SPIDER WEB
+========================= */
+
+.web{
+    position:absolute;
+    width:500px;
+    height:500px;
+    border:1px solid #ff174455;
+    border-radius:50%;
+    opacity:.3;
+    animation:webRotate 25s linear infinite;
+}
+
+.web:before,
+.web:after{
+    content:"";
+    position:absolute;
+    inset:50px;
+    border:1px solid #ff174455;
+    border-radius:50%;
+}
+
+.web:after{
+    inset:110px;
+}
+
+.web-lines{
+    position:absolute;
+    inset:0;
+}
+
+.web-lines span{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:1px;
+    height:100%;
+    background:#ff174433;
+    transform-origin:center;
+}
+
+.web-lines span:nth-child(1){transform:translate(-50%,-50%) rotate(0deg);}
+.web-lines span:nth-child(2){transform:translate(-50%,-50%) rotate(30deg);}
+.web-lines span:nth-child(3){transform:translate(-50%,-50%) rotate(60deg);}
+.web-lines span:nth-child(4){transform:translate(-50%,-50%) rotate(90deg);}
+.web-lines span:nth-child(5){transform:translate(-50%,-50%) rotate(120deg);}
+.web-lines span:nth-child(6){transform:translate(-50%,-50%) rotate(150deg);}
+
+@keyframes webRotate{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    background:
+    radial-gradient(circle at center,#250009 0%,#070308 40%,#000 100%);
+}
+
+.intro small{
+    color:#aaa;
+    letter-spacing:5px;
+    text-transform:uppercase;
+}
+
+.intro h1{
+    margin-top:25px;
+    font-size:clamp(3rem,10vw,8rem);
+    letter-spacing:8px;
+    text-transform:uppercase;
+    color:white;
+    text-shadow:
+    0 0 10px #ff1744,
+    0 0 30px #ff1744,
+    0 0 70px #ff174477;
+    animation:titlePulse 2s infinite alternate;
+}
+
+@keyframes titlePulse{
+    from{
+        transform:scale(.98);
+    }
+    to{
+        transform:scale(1.03);
+    }
+}
+
+.intro p{
+    margin-top:20px;
+    font-size:1.2rem;
+    color:#ddd;
+}
+
+.start-btn{
+    margin-top:40px;
+    padding:17px 40px;
+    border:1px solid #ff1744;
+    border-radius:50px;
+    background:#ff174411;
+    color:white;
+    font-size:1rem;
+    letter-spacing:2px;
+    cursor:pointer;
+    box-shadow:0 0 25px #ff174455;
+    transition:.3s;
+}
+
+.start-btn:hover{
+    background:#ff1744;
+    transform:scale(1.08);
+    box-shadow:0 0 50px #ff1744;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    background:
+    radial-gradient(circle at center,#30000a,#070308 50%,#000);
+}
+
+.hero-photo{
+    position:relative;
+    width:min(330px,70vw);
+    height:min(440px,65vh);
+    margin:auto;
+    border-radius:25px;
+    overflow:hidden;
+    border:2px solid #ff1744;
+    box-shadow:
+    0 0 20px #ff1744,
+    0 0 80px #ff174455;
+    transform:translateY(40px) scale(.8);
+    opacity:0;
+    animation:heroEnter 1.5s forwards;
+}
+
+@keyframes heroEnter{
+
+    to{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+
+}
+
+.hero-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* RED HERO OVERLAY */
+
+.hero-photo:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        135deg,
+        #ff174433,
+        transparent 35%,
+        transparent 65%,
+        #ff174433
+    );
+    pointer-events:none;
+}
+
+.hero-label{
+    margin-top:25px;
+}
+
+.hero-label .small{
+    color:#ff1744;
+    letter-spacing:5px;
+    text-transform:uppercase;
+}
+
+.hero-label h2{
+    margin-top:10px;
+    font-size:clamp(2.5rem,8vw,5rem);
+    text-transform:uppercase;
+    letter-spacing:5px;
+    text-shadow:0 0 25px #ff1744;
+}
+
+.hero-label p{
+    margin-top:10px;
+    color:#ccc;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message{
+    background:
+    linear-gradient(#030305dd,#030305dd),
+    radial-gradient(circle,#40000d,#000);
+}
+
+.message-card{
+    padding:45px 30px;
+    border:1px solid #ff174455;
+    border-radius:25px;
+    background:#ffffff05;
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 50px #ff174422;
+}
+
+.message-card .quote{
+    font-size:clamp(2rem,6vw,4rem);
+    color:#ff1744;
+}
+
+.message-card h2{
+    margin:20px 0;
+    font-size:clamp(2rem,6vw,4rem);
+}
+
+.message-card p{
+    color:#ddd;
+    font-size:1.15rem;
+    line-height:1.8;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+    background:#030305;
+}
+
+.cards h2{
+    font-size:clamp(2rem,6vw,4rem);
+    margin-bottom:35px;
+}
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    min-height:180px;
+    padding:25px;
+    border:1px solid #ff174433;
+    border-radius:20px;
+    background:
+    linear-gradient(145deg,#ff174411,#ffffff03);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-12px) rotate(1deg);
+    border-color:#ff1744;
+    box-shadow:0 0 30px #ff174433;
+}
+
+.card span{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#ff1744;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#bbb;
+    line-height:1.5;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+    background:
+    radial-gradient(circle at center,#65000f,#090005 45%,#000);
+}
+
+.final h1{
+    font-size:clamp(3rem,10vw,8rem);
+    line-height:.9;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:white;
+    text-shadow:
+    0 0 10px #ff1744,
+    0 0 30px #ff1744,
+    0 0 80px #ff1744;
+    animation:finalGlow 1.5s infinite alternate;
+}
+
+@keyframes finalGlow{
+
+    from{
+        text-shadow:
+        0 0 10px #ff1744,
+        0 0 30px #ff1744;
+    }
+
+    to{
+        text-shadow:
+        0 0 20px #ff1744,
+        0 0 60px #ff1744,
+        0 0 120px #ff1744;
+    }
+
+}
+
+.final p{
+    margin-top:30px;
+    font-size:1.3rem;
+    color:#ddd;
+}
+
+.final .heart{
+    font-size:4rem;
+    margin-bottom:25px;
+}
+
+/* =========================
+   WEB SHOOT
+========================= */
+
+.shoot{
+    position:fixed;
+    width:4px;
+    height:150px;
+    background:linear-gradient(white,#ff1744);
+    left:50%;
+    top:-150px;
+    box-shadow:0 0 20px white;
+    animation:shootDown 1s forwards;
+    z-index:100;
+}
+
+@keyframes shootDown{
+
+    to{
+        top:0;
+    }
+
+}
+
+/* =========================
+   TRANSITION
+========================= */
+
+.flash{
+    position:fixed;
+    inset:0;
+    background:white;
+    z-index:200;
+    opacity:0;
+    pointer-events:none;
+}
+
+.flash.active{
+    animation:flash .5s;
+}
+
+@keyframes flash{
+
+    0%{opacity:0;}
+    40%{opacity:.8;}
+    100%{opacity:0;}
+
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.next{
+    margin-top:35px;
+    padding:14px 32px;
+    border:1px solid #ff1744;
+    background:transparent;
+    color:white;
+    border-radius:40px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.next:hover{
+    background:#ff1744;
+    box-shadow:0 0 30px #ff1744;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    .card-grid{
+        grid-template-columns:1fr;
+        max-height:55vh;
+        overflow-y:auto;
+    }
+
+    .card{
+        min-height:130px;
+    }
+
+    .web{
+        width:350px;
+        height:350px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="flash" id="flash"></div>
+
+<!-- PARTICLES -->
+
+<div class="particles" id="particles"></div>
+
+
+<!-- =========================
+     SCREEN 1
+========================= -->
+
+<section class="screen active intro" id="s1">
+
+<div class="web">
+<div class="web-lines">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+
+<div class="content">
+
+<small>THIS IS NOT A BIRTHDAY MESSAGE</small>
+
+<h1>ANNA</h1>
+
+<p>
+Because some people don't need a special occasion
+to be special.
+</p>
+
+<button class="start-btn" onclick="startExperience()">
+ENTER THE SPIDER WORLD 🕷️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 2
+========================= -->
+
+<section class="screen hero" id="s2">
+
+<div class="content">
+
+<div class="hero-photo">
+
+<!-- YOUR PHOTO -->
+
+<img
+src="https://kommodo.ai/i/qyiYKrqkUQVfE0wKaUIs"
+alt="Anna">
+
+</div>
+
+<div class="hero-label">
+
+<div class="small">
+THE MAN BEHIND THE CHAOS
+</div>
+
+<h2>ANNA 🕷️</h2>
+
+<p>
+Not a superhero...
+but somehow always there when it matters.
+</p>
+
+<button class="next" onclick="next(3)">
+CONTINUE →
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 3
+========================= -->
+
+<section class="screen message" id="s3">
+
+<div class="content">
+
+<div class="message-card">
+
+<div class="quote">“</div>
+
+<h2>
+Every day is special...
+</h2>
+
+<p>
+Not because something amazing happened.
+
+Not because it's a birthday.
+
+Not because there is a reason to celebrate.
+
+Sometimes a normal day becomes special
+simply because you are part of it.
+
+And that's what you are to me, Anna. ❤️
+</p>
+
+<button class="next" onclick="next(4)">
+THERE'S MORE →
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 4
+========================= -->
+
+<section class="screen cards" id="s4">
+
+<div class="content">
+
+<h2>
+WHY YOU? 🕷️
+</h2>
+
+<div class="card-grid">
+
+<div class="card">
+
+<span>🕸️</span>
+
+<h3>Always There</h3>
+
+<p>
+No matter how random the situation gets,
+you somehow show up.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<span>😂</span>
+
+<h3>Chaos Creator</h3>
+
+<p>
+Peace was never really an option
+when you are around.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<span>❤️</span>
+
+<h3>My Person</h3>
+
+<p>
+Some bonds don't need explanations.
+They just exist.
+</p>
+
+</div>
+
+</div>
+
+<button class="next" onclick="next(5)">
+FINAL WEB → 🕷️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 5
+========================= -->
+
+<section class="screen final" id="s5">
+
+<div class="content">
+
+<div class="heart">
+🕷️
+</div>
+
+<h1>
+EVERY DAY<br>
+IS SPECIAL<br>
+BECAUSE<br>
+YOU EXIST.
+</h1>
+
+<p>
+Love you, Anna. ❤️
+</p>
+
+<button class="next" onclick="location.reload()">
+↻ START AGAIN
+</button>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* =========================
+   PARTICLES
+========================= */
+
+const particleArea =
+document.getElementById("particles");
+
+for(let i=0;i<70;i++){
+
+const p=document.createElement("div");
+
+p.className="particle";
+
+p.style.left=
+Math.random()*100+"vw";
+
+p.style.animationDuration=
+(4+Math.random()*8)+"s";
+
+p.style.animationDelay=
+Math.random()*6+"s";
+
+p.style.opacity=
+Math.random();
+
+particleArea.appendChild(p);
+
+}
+
+
+/* =========================
+   EXPERIENCE START
+========================= */
+
+function startExperience(){
+
+webShoot();
+
+setTimeout(()=>{
+next(2);
+},700);
+
+}
+
+
+/* =========================
+   SCREEN TRANSITION
+========================= */
+
+function next(number){
+
+const flash=
+document.getElementById("flash");
+
+flash.classList.remove("active");
+
+void flash.offsetWidth;
+
+flash.classList.add("active");
+
+document.querySelectorAll(".screen")
+.forEach(screen=>{
+screen.classList.remove("active");
+});
+
+setTimeout(()=>{
+
+document
+.getElementById("s"+number)
+.classList.add("active");
+
+},250);
+
+}
+
+
+/* =========================
+   WEB SHOOT
+========================= */
+
+function webShoot(){
+
+const web=document.createElement("div");
+
+web.className="shoot";
+
+document.body.appendChild(web);
+
+setTimeout(()=>{
+web.remove();
+},1200);
+
+}
+
+
+/* =========================
+   RANDOM WEB EFFECT
+========================= */
+
+setInterval(()=>{
+
+if(Math.random()>.55){
+
+const w=document.createElement("div");
+
+w.style.position="fixed";
+w.style.width="2px";
+w.style.height=
+(80+Math.random()*180)+"px";
+
+w.style.background=
+"linear-gradient(white,transparent)";
+
+w.style.left=
+Math.random()*100+"vw";
+
+w.style.top="-200px";
+
+w.style.opacity=".5";
+
+w.style.zIndex="2";
+
+w.animate(
+[
+{transform:"translateY(0)"},
+{transform:"translateY(120vh)"}
+],
+{
+duration:3000+Math.random()*3000,
+easing:"linear"
+}
+);
+
+document.body.appendChild(w);
+
+setTimeout(()=>{
+w.remove();
+},6000);
+
+}
+
+},1200);
+
+
+/* =========================
+   FINAL SPIDER EFFECT
+========================= */
+
+document
+.getElementById("s5")
+.addEventListener("click",()=>{
+
+for(let i=0;i<20;i++){
+
+const heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.style.position="fixed";
+
+heart.style.left=
+Math.random()*100+"vw";
+
+heart.style.top="50vh";
+
+heart.style.fontSize=
+(15+Math.random()*30)+"px";
+
+heart.style.zIndex="100";
+
+document.body.appendChild(heart);
+
+heart.animate(
+[
+{
+transform:"translateY(0) scale(.2)",
+opacity:1
+},
+{
+transform:
+`translateY(${-150-Math.random()*500}px)
+scale(1.5)`,
+opacity:0
+}
+],
+{
+duration:1800+Math.random()*1200,
+easing:"ease-out"
+}
+);
+
+setTimeout(()=>{
+heart.remove();
+},3500);
+
+}
+
+});
+
+</script>
+
+</body>
+</html>

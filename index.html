@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For Anna 🕷️</title>
+<title>For Naina 🕷️❤️</title>
 
 <style>
 
@@ -27,7 +27,7 @@ body{
 }
 
 /* =========================
-   MAIN SCREEN
+   SCREEN
 ========================= */
 
 .screen{
@@ -76,7 +76,6 @@ body{
 }
 
 @keyframes particleFloat{
-
     from{
         transform:translateY(110vh);
         opacity:0;
@@ -138,12 +137,29 @@ body{
     transform-origin:center;
 }
 
-.web-lines span:nth-child(1){transform:translate(-50%,-50%) rotate(0deg);}
-.web-lines span:nth-child(2){transform:translate(-50%,-50%) rotate(30deg);}
-.web-lines span:nth-child(3){transform:translate(-50%,-50%) rotate(60deg);}
-.web-lines span:nth-child(4){transform:translate(-50%,-50%) rotate(90deg);}
-.web-lines span:nth-child(5){transform:translate(-50%,-50%) rotate(120deg);}
-.web-lines span:nth-child(6){transform:translate(-50%,-50%) rotate(150deg);}
+.web-lines span:nth-child(1){
+    transform:translate(-50%,-50%) rotate(0deg);
+}
+
+.web-lines span:nth-child(2){
+    transform:translate(-50%,-50%) rotate(30deg);
+}
+
+.web-lines span:nth-child(3){
+    transform:translate(-50%,-50%) rotate(60deg);
+}
+
+.web-lines span:nth-child(4){
+    transform:translate(-50%,-50%) rotate(90deg);
+}
+
+.web-lines span:nth-child(5){
+    transform:translate(-50%,-50%) rotate(120deg);
+}
+
+.web-lines span:nth-child(6){
+    transform:translate(-50%,-50%) rotate(150deg);
+}
 
 @keyframes webRotate{
     to{
@@ -157,7 +173,7 @@ body{
 
 .intro{
     background:
-    radial-gradient(circle at center,#250009 0%,#070308 40%,#000 100%);
+    radial-gradient(circle at center,#35000c 0%,#070308 40%,#000 100%);
 }
 
 .intro small{
@@ -170,12 +186,13 @@ body{
     margin-top:25px;
     font-size:clamp(3rem,10vw,8rem);
     letter-spacing:8px;
-    text-transform:uppercase;
     color:white;
+
     text-shadow:
     0 0 10px #ff1744,
     0 0 30px #ff1744,
     0 0 70px #ff174477;
+
     animation:titlePulse 2s infinite alternate;
 }
 
@@ -183,6 +200,7 @@ body{
     from{
         transform:scale(.98);
     }
+
     to{
         transform:scale(1.03);
     }
@@ -197,14 +215,20 @@ body{
 .start-btn{
     margin-top:40px;
     padding:17px 40px;
+
     border:1px solid #ff1744;
     border-radius:50px;
+
     background:#ff174411;
     color:white;
+
     font-size:1rem;
     letter-spacing:2px;
+
     cursor:pointer;
+
     box-shadow:0 0 25px #ff174455;
+
     transition:.3s;
 }
 
@@ -225,27 +249,34 @@ body{
 
 .hero-photo{
     position:relative;
+
     width:min(330px,70vw);
     height:min(440px,65vh);
+
     margin:auto;
+
     border-radius:25px;
+
     overflow:hidden;
+
     border:2px solid #ff1744;
+
     box-shadow:
     0 0 20px #ff1744,
     0 0 80px #ff174455;
+
     transform:translateY(40px) scale(.8);
+
     opacity:0;
+
     animation:heroEnter 1.5s forwards;
 }
 
 @keyframes heroEnter{
-
     to{
         transform:translateY(0) scale(1);
         opacity:1;
     }
-
 }
 
 .hero-photo img{
@@ -254,12 +285,42 @@ body{
     object-fit:cover;
 }
 
-/* RED HERO OVERLAY */
+/* HEART OVER PHOTO */
+
+.photo-heart{
+    position:absolute;
+
+    right:15px;
+    top:15px;
+
+    font-size:2.5rem;
+
+    z-index:5;
+
+    filter:
+    drop-shadow(0 0 10px #ff1744);
+
+    animation:heartBeat 1.2s infinite;
+}
+
+@keyframes heartBeat{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.25);
+    }
+}
+
+/* RED OVERLAY */
 
 .hero-photo:after{
     content:"";
+
     position:absolute;
     inset:0;
+
     background:
     linear-gradient(
         135deg,
@@ -268,6 +329,7 @@ body{
         transparent 65%,
         #ff174433
     );
+
     pointer-events:none;
 }
 
@@ -283,9 +345,12 @@ body{
 
 .hero-label h2{
     margin-top:10px;
+
     font-size:clamp(2.5rem,8vw,5rem);
+
     text-transform:uppercase;
     letter-spacing:5px;
+
     text-shadow:0 0 25px #ff1744;
 }
 
@@ -306,10 +371,15 @@ body{
 
 .message-card{
     padding:45px 30px;
+
     border:1px solid #ff174455;
+
     border-radius:25px;
+
     background:#ffffff05;
+
     backdrop-filter:blur(15px);
+
     box-shadow:0 0 50px #ff174422;
 }
 
@@ -320,12 +390,15 @@ body{
 
 .message-card h2{
     margin:20px 0;
+
     font-size:clamp(2rem,6vw,4rem);
 }
 
 .message-card p{
     color:#ddd;
+
     font-size:1.15rem;
+
     line-height:1.8;
 }
 
@@ -339,46 +412,62 @@ body{
 
 .cards h2{
     font-size:clamp(2rem,6vw,4rem);
+
     margin-bottom:35px;
 }
 
 .card-grid{
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:20px;
 }
 
 .card{
     min-height:180px;
+
     padding:25px;
+
     border:1px solid #ff174433;
+
     border-radius:20px;
+
     background:
     linear-gradient(145deg,#ff174411,#ffffff03);
+
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
+
     transition:.4s;
 }
 
 .card:hover{
     transform:translateY(-12px) rotate(1deg);
+
     border-color:#ff1744;
+
     box-shadow:0 0 30px #ff174433;
 }
 
 .card span{
     font-size:3rem;
+
     margin-bottom:15px;
 }
 
 .card h3{
     color:#ff1744;
+
     margin-bottom:10px;
 }
 
 .card p{
     color:#bbb;
+
     line-height:1.5;
 }
 
@@ -393,14 +482,18 @@ body{
 
 .final h1{
     font-size:clamp(3rem,10vw,8rem);
+
     line-height:.9;
+
     letter-spacing:5px;
-    text-transform:uppercase;
+
     color:white;
+
     text-shadow:
     0 0 10px #ff1744,
     0 0 30px #ff1744,
     0 0 80px #ff1744;
+
     animation:finalGlow 1.5s infinite alternate;
 }
 
@@ -418,54 +511,67 @@ body{
         0 0 60px #ff1744,
         0 0 120px #ff1744;
     }
-
 }
 
 .final p{
     margin-top:30px;
+
     font-size:1.3rem;
+
     color:#ddd;
 }
 
 .final .heart{
     font-size:4rem;
+
     margin-bottom:25px;
+
+    animation:heartBeat 1.2s infinite;
 }
 
 /* =========================
-   WEB SHOOT
+   BUTTON
 ========================= */
 
-.shoot{
-    position:fixed;
-    width:4px;
-    height:150px;
-    background:linear-gradient(white,#ff1744);
-    left:50%;
-    top:-150px;
-    box-shadow:0 0 20px white;
-    animation:shootDown 1s forwards;
-    z-index:100;
+.next{
+    margin-top:35px;
+
+    padding:14px 32px;
+
+    border:1px solid #ff1744;
+
+    background:transparent;
+
+    color:white;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    transition:.3s;
 }
 
-@keyframes shootDown{
+.next:hover{
+    background:#ff1744;
 
-    to{
-        top:0;
-    }
-
+    box-shadow:0 0 30px #ff1744;
 }
 
 /* =========================
-   TRANSITION
+   FLASH
 ========================= */
 
 .flash{
     position:fixed;
+
     inset:0;
+
     background:white;
+
     z-index:200;
+
     opacity:0;
+
     pointer-events:none;
 }
 
@@ -475,30 +581,48 @@ body{
 
 @keyframes flash{
 
-    0%{opacity:0;}
-    40%{opacity:.8;}
-    100%{opacity:0;}
+    0%{
+        opacity:0;
+    }
 
+    40%{
+        opacity:.8;
+    }
+
+    100%{
+        opacity:0;
+    }
 }
 
 /* =========================
-   BUTTON
+   WEB SHOOT
 ========================= */
 
-.next{
-    margin-top:35px;
-    padding:14px 32px;
-    border:1px solid #ff1744;
-    background:transparent;
-    color:white;
-    border-radius:40px;
-    cursor:pointer;
-    transition:.3s;
+.shoot{
+    position:fixed;
+
+    width:4px;
+
+    height:150px;
+
+    background:linear-gradient(white,#ff1744);
+
+    left:50%;
+
+    top:-150px;
+
+    box-shadow:0 0 20px white;
+
+    animation:shootDown 1s forwards;
+
+    z-index:100;
 }
 
-.next:hover{
-    background:#ff1744;
-    box-shadow:0 0 30px #ff1744;
+@keyframes shootDown{
+
+    to{
+        top:0;
+    }
 }
 
 /* =========================
@@ -509,7 +633,9 @@ body{
 
     .card-grid{
         grid-template-columns:1fr;
+
         max-height:55vh;
+
         overflow-y:auto;
     }
 
@@ -531,8 +657,6 @@ body{
 
 <div class="flash" id="flash"></div>
 
-<!-- PARTICLES -->
-
 <div class="particles" id="particles"></div>
 
 
@@ -543,21 +667,25 @@ body{
 <section class="screen active intro" id="s1">
 
 <div class="web">
+
 <div class="web-lines">
+
 <span></span>
 <span></span>
 <span></span>
 <span></span>
 <span></span>
 <span></span>
+
 </div>
+
 </div>
 
 <div class="content">
 
 <small>THIS IS NOT A BIRTHDAY MESSAGE</small>
 
-<h1>ANNA</h1>
+<h1>NAINA ❤️</h1>
 
 <p>
 Because some people don't need a special occasion
@@ -565,7 +693,9 @@ to be special.
 </p>
 
 <button class="start-btn" onclick="startExperience()">
+
 ENTER THE SPIDER WORLD 🕷️
+
 </button>
 
 </div>
@@ -583,11 +713,15 @@ ENTER THE SPIDER WORLD 🕷️
 
 <div class="hero-photo">
 
+<div class="photo-heart">
+❤️
+</div>
+
 <!-- YOUR PHOTO -->
 
 <img
 src="https://kommodo.ai/i/qyiYKrqkUQVfE0wKaUIs"
-alt="Anna">
+alt="Naina">
 
 </div>
 
@@ -597,7 +731,9 @@ alt="Anna">
 THE MAN BEHIND THE CHAOS
 </div>
 
-<h2>ANNA 🕷️</h2>
+<h2>
+NAINA 🕷️❤️
+</h2>
 
 <p>
 Not a superhero...
@@ -625,23 +761,35 @@ CONTINUE →
 
 <div class="message-card">
 
-<div class="quote">“</div>
+<div class="quote">
+“
+</div>
 
 <h2>
-Every day is special...
+Every day is special... ❤️
 </h2>
 
 <p>
+
 Not because something amazing happened.
+
+<br><br>
 
 Not because it's a birthday.
 
+<br><br>
+
 Not because there is a reason to celebrate.
+
+<br><br>
 
 Sometimes a normal day becomes special
 simply because you are part of it.
 
-And that's what you are to me, Anna. ❤️
+<br><br>
+
+And that's what you are to me, Naina. ❤️
+
 </p>
 
 <button class="next" onclick="next(4)">
@@ -664,7 +812,7 @@ THERE'S MORE →
 <div class="content">
 
 <h2>
-WHY YOU? 🕷️
+WHY YOU? 🕷️❤️
 </h2>
 
 <div class="card-grid">
@@ -713,7 +861,7 @@ They just exist.
 </div>
 
 <button class="next" onclick="next(5)">
-FINAL WEB → 🕷️
+FINAL WEB → 🕷️❤️
 </button>
 
 </div>
@@ -730,18 +878,20 @@ FINAL WEB → 🕷️
 <div class="content">
 
 <div class="heart">
-🕷️
+🕷️❤️
 </div>
 
 <h1>
+
 EVERY DAY<br>
 IS SPECIAL<br>
 BECAUSE<br>
 YOU EXIST.
+
 </h1>
 
 <p>
-Love you, Anna. ❤️
+Love you, Naina. ❤️
 </p>
 
 <button class="next" onclick="location.reload()">
@@ -768,16 +918,16 @@ const p=document.createElement("div");
 
 p.className="particle";
 
-p.style.left=
+p.style.left =
 Math.random()*100+"vw";
 
-p.style.animationDuration=
+p.style.animationDuration =
 (4+Math.random()*8)+"s";
 
-p.style.animationDelay=
+p.style.animationDelay =
 Math.random()*6+"s";
 
-p.style.opacity=
+p.style.opacity =
 Math.random();
 
 particleArea.appendChild(p);
@@ -786,7 +936,7 @@ particleArea.appendChild(p);
 
 
 /* =========================
-   EXPERIENCE START
+   START EXPERIENCE
 ========================= */
 
 function startExperience(){
@@ -794,7 +944,9 @@ function startExperience(){
 webShoot();
 
 setTimeout(()=>{
+
 next(2);
+
 },700);
 
 }
@@ -806,7 +958,7 @@ next(2);
 
 function next(number){
 
-const flash=
+const flash =
 document.getElementById("flash");
 
 flash.classList.remove("active");
@@ -815,9 +967,12 @@ void flash.offsetWidth;
 
 flash.classList.add("active");
 
-document.querySelectorAll(".screen")
+document
+.querySelectorAll(".screen")
 .forEach(screen=>{
+
 screen.classList.remove("active");
+
 });
 
 setTimeout(()=>{
@@ -837,14 +992,17 @@ document
 
 function webShoot(){
 
-const web=document.createElement("div");
+const web =
+document.createElement("div");
 
 web.className="shoot";
 
 document.body.appendChild(web);
 
 setTimeout(()=>{
+
 web.remove();
+
 },1200);
 
 }
@@ -858,17 +1016,20 @@ setInterval(()=>{
 
 if(Math.random()>.55){
 
-const w=document.createElement("div");
+const w =
+document.createElement("div");
 
 w.style.position="fixed";
+
 w.style.width="2px";
-w.style.height=
+
+w.style.height =
 (80+Math.random()*180)+"px";
 
-w.style.background=
+w.style.background =
 "linear-gradient(white,transparent)";
 
-w.style.left=
+w.style.left =
 Math.random()*100+"vw";
 
 w.style.top="-200px";
@@ -878,20 +1039,31 @@ w.style.opacity=".5";
 w.style.zIndex="2";
 
 w.animate(
+
 [
-{transform:"translateY(0)"},
-{transform:"translateY(120vh)"}
+{
+transform:"translateY(0)"
+},
+
+{
+transform:"translateY(120vh)"
+}
+
 ],
+
 {
 duration:3000+Math.random()*3000,
 easing:"linear"
 }
+
 );
 
 document.body.appendChild(w);
 
 setTimeout(()=>{
+
 w.remove();
+
 },6000);
 
 }
@@ -900,27 +1072,28 @@ w.remove();
 
 
 /* =========================
-   FINAL SPIDER EFFECT
+   FINAL HEART EFFECT
 ========================= */
 
 document
 .getElementById("s5")
 .addEventListener("click",()=>{
 
-for(let i=0;i<20;i++){
+for(let i=0;i<25;i++){
 
-const heart=document.createElement("div");
+const heart =
+document.createElement("div");
 
 heart.innerHTML="❤️";
 
 heart.style.position="fixed";
 
-heart.style.left=
+heart.style.left =
 Math.random()*100+"vw";
 
 heart.style.top="50vh";
 
-heart.style.fontSize=
+heart.style.fontSize =
 (15+Math.random()*30)+"px";
 
 heart.style.zIndex="100";
@@ -928,26 +1101,34 @@ heart.style.zIndex="100";
 document.body.appendChild(heart);
 
 heart.animate(
+
 [
 {
 transform:"translateY(0) scale(.2)",
 opacity:1
 },
+
 {
 transform:
 `translateY(${-150-Math.random()*500}px)
 scale(1.5)`,
+
 opacity:0
 }
+
 ],
+
 {
 duration:1800+Math.random()*1200,
 easing:"ease-out"
 }
+
 );
 
 setTimeout(()=>{
+
 heart.remove();
+
 },3500);
 
 }
